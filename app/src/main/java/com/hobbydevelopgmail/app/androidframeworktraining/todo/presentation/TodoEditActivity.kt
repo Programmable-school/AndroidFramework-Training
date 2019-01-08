@@ -43,7 +43,7 @@ class TodoEditActivity : AppCompatActivity() {
          */
         binding = DataBindingUtil.setContentView<ActivityTodoEditBinding>(this, R.layout.activity_todo_edit)
 
-        // 「メモを編集する」というUseCaseを注入する
+        // 「書き込み」「読み込み」のUseCaseを注入する
         val todoEditRepository: TodoEditDataSource = TodoEditDataSource(this)
         readTodoUseCase = ReadTodoUseCase(todoEditRepository)
         writeTodoUseCase = WriteTodoUseCase(todoEditRepository)
