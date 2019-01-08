@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.hobbydevelopgmail.app.androidframeworktraining.R
+import com.hobbydevelopgmail.app.androidframeworktraining.todo.presentation.TodoEditActivity
 import kotlinx.android.synthetic.main.fragment_todo_list.*
 
 class TodoListFragment: Fragment() {

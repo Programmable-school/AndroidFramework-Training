@@ -1,4 +1,4 @@
-package com.hobbydevelopgmail.app.androidframeworktraining.todo
+package com.hobbydevelopgmail.app.androidframeworktraining.todo.presentation
 
 import android.content.Context
 import android.content.Intent
@@ -8,11 +8,17 @@ import android.support.v7.app.AppCompatActivity
 import com.hobbydevelopgmail.app.androidframeworktraining.R
 import com.hobbydevelopgmail.app.androidframeworktraining.common.NavigationController
 import com.hobbydevelopgmail.app.androidframeworktraining.databinding.ActivityTodoEditBinding
+import com.hobbydevelopgmail.app.androidframeworktraining.todo.domain.usecase.ReadTodoUseCase
+import com.hobbydevelopgmail.app.androidframeworktraining.todo.domain.usecase.WriteTodoUseCase
+import com.hobbydevelopgmail.app.androidframeworktraining.todo.infrastructure.datasource.TodoEditDataSource
 
 class TodoEditActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityTodoEditBinding
-    lateinit var editViewModel: TodoEditViewModel
+    lateinit var viewModel: TodoEditViewModel
+    lateinit var navigationController: NavigationController
+    lateinit var readTodoUseCase: ReadTodoUseCase
+    lateinit var writeTodoUseCase: WriteTodoUseCase
 
     companion object {
         const val LOG_TAG = "TODO_EDIT_ACTIVITY_LOG"
@@ -36,9 +42,16 @@ class TodoEditActivity : AppCompatActivity() {
             画面遷移の場合はViewModelはView(ActivityやFragment)を知らないのでNavigatorを使って画面遷移をします。
          */
         binding = DataBindingUtil.setContentView<ActivityTodoEditBinding>(this, R.layout.activity_todo_edit)
-        val navigationController: NavigationController = NavigationController(this)
-        editViewModel = TodoEditViewModel(navigationController)
-        binding.viewModel = editViewModel
-        editViewModel.text = "sample"
+
+        // 「メモを編集する」というUseCaseを注入する
+        val todoEditRepository: TodoEditDataSource = TodoEditDataSource(this)
+        readTodoUseCase = ReadTodoUseCase(todoEditRepository)
+        writeTodoUseCase = WriteTodoUseCase(todoEditRepository)
+        navigationController = NavigationController(this)
+
+        // ViewModelにUseCaseとNavigatorを注入
+        viewModel = TodoEditViewModel(readTodoUseCase, writeTodoUseCase, navigationController)
+        binding.viewModel = viewModel
+        viewModel.configure()
     }
 }

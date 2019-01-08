@@ -1,9 +1,12 @@
-package com.hobbydevelopgmail.app.androidframeworktraining.todo
+package com.hobbydevelopgmail.app.androidframeworktraining.todo.presentation
 
 import android.databinding.BaseObservable
 import android.databinding.Bindable
 import com.hobbydevelopgmail.app.androidframeworktraining.BR
 import com.hobbydevelopgmail.app.androidframeworktraining.common.NavigationController
+import com.hobbydevelopgmail.app.androidframeworktraining.todo.domain.model.TodoEditModel
+import com.hobbydevelopgmail.app.androidframeworktraining.todo.domain.usecase.ReadTodoUseCase
+import com.hobbydevelopgmail.app.androidframeworktraining.todo.domain.usecase.WriteTodoUseCase
 
 
 /*
@@ -12,6 +15,8 @@ import com.hobbydevelopgmail.app.androidframeworktraining.common.NavigationContr
 */
 
 class TodoEditViewModel(
+    private val readTodoUseCase: ReadTodoUseCase,
+    private val writeTodoUseCase: WriteTodoUseCase,
     private val navigationController: NavigationController
 ): BaseObservable() {
     @get:Bindable
@@ -21,12 +26,25 @@ class TodoEditViewModel(
             notifyPropertyChanged(BR.text)
         }
 
+    fun configure() {
+        text = readTodoUseCase().text
+    }
+
     fun onSave() {
         println("save ${this.text}")
+        writeTodoUseCase(text)
         navigationController.closeActivity()
     }
 
     fun onClear() {
         text = ""
+    }
+
+    private fun readTodoUseCase(): TodoEditModel {
+        return readTodoUseCase.execute()
+    }
+
+    private fun writeTodoUseCase(text: String) {
+        writeTodoUseCase.execute(TodoEditModel(text))
     }
 }
