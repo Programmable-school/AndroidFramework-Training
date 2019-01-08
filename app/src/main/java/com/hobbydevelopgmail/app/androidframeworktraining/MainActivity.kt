@@ -3,9 +3,9 @@ package com.hobbydevelopgmail.app.androidframeworktraining
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
-import com.hobbydevelopgmail.app.androidframeworktraining.Home.HomeFragment
-import com.hobbydevelopgmail.app.androidframeworktraining.Other.OtherFragment
-import com.hobbydevelopgmail.app.androidframeworktraining.Todo.TodoListFragment
+import com.hobbydevelopgmail.app.androidframeworktraining.home.HomeFragment
+import com.hobbydevelopgmail.app.androidframeworktraining.other.OtherFragment
+import com.hobbydevelopgmail.app.androidframeworktraining.todo.TodoListFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

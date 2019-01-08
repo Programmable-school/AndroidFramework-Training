@@ -1,4 +1,4 @@
-package com.hobbydevelopgmail.app.androidframeworktraining.Other
+package com.hobbydevelopgmail.app.androidframeworktraining.other
 
 import android.os.Bundle
 import android.support.v4.app.Fragment

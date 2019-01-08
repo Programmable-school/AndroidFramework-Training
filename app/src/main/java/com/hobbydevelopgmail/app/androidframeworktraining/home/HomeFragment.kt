@@ -1,4 +1,4 @@
-package com.hobbydevelopgmail.app.androidframeworktraining.Home
+package com.hobbydevelopgmail.app.androidframeworktraining.home
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -49,7 +49,7 @@ class HomeFragment: Fragment() {
             labelTextView.setText(text)
 
             // Preferenceへテキストを保存
-            val editer = mSharedData?.edit()
+            val editer = mSharedData.edit()
             editer.putString(DATA_STORE_TEXT, text)
             editer.commit()
 
