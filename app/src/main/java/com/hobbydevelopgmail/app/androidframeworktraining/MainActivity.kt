@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             .commit()
 
         // BottomNavigationViewの初期化
-        bottom_navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
 }
 

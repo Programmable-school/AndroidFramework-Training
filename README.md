@@ -8,7 +8,8 @@
 Android Studioをダウンロードしてインストールしてください。<br> 
 [Android Studio](https://developer.android.com/studio/)<br>
 
-## 利用するSDK
+## 利用するSDKとライブラリ
+### SDK
 - Activity
 - Fragment
 - BottomNavigationView
@@ -17,6 +18,12 @@ Android Studioをダウンロードしてインストールしてください。
 - Databinding
 - Intent
 - Bundle
+- SharedPreferences
+
+### ライブラリ
+- Realm
+- retrofit
+- Coroutine
 
 ## 手順
 Android Studioを利用してコーディングします。
@@ -36,3 +43,21 @@ MainActivityにFragmentをコミットする処理を実装<br>
 アイコンのカスタマイズ<br>
   selectorを作成<br>
 	BottomNaigationViewのapp:itemTextColorとapp:itemIconTintに設定<br>
+
+## HomeFragment作成
+TextViewとButtomViewとLabelViewを配置<br>
+HomeFragmentにリスナー実装<br>
+Buttom押すとSharedPreferencesへ保存<br>
+起動のたびにSharedPreferencesから取得する<br>
+
+## TodoListFragment作成
+AddButtomを用意<br>
+TodoEditActivityかFragmentを用意<br>
+TextViewと保存Button<br>
+Realm導入、RealmModel作成<br>
+ToDoをRealmへ保存<br>
+RecyclerViewを用意する<br>
+SelectDialogFragment<br>
+編集と削除のActivity用意<br>
+
+## OtherFragment作成
