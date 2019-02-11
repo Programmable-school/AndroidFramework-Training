@@ -1,4 +1,4 @@
-package com.hobbydevelopgmail.app.androidframeworktraining.todo.presentation
+package com.hobbydevelopgmail.app.androidframeworktraining.other.cleanarchitecture.presentation
 
 import android.content.Context
 import android.content.Intent
@@ -7,14 +7,14 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.hobbydevelopgmail.app.androidframeworktraining.R
 import com.hobbydevelopgmail.app.androidframeworktraining.common.NavigationController
-import com.hobbydevelopgmail.app.androidframeworktraining.databinding.ActivityTodoEditBinding
-import com.hobbydevelopgmail.app.androidframeworktraining.todo.domain.usecase.ReadTodoUseCase
-import com.hobbydevelopgmail.app.androidframeworktraining.todo.domain.usecase.WriteTodoUseCase
-import com.hobbydevelopgmail.app.androidframeworktraining.todo.infrastructure.datasource.TodoEditDataSource
+import com.hobbydevelopgmail.app.androidframeworktraining.databinding.ActivityCleanarchitectureTodoEditBinding
+import com.hobbydevelopgmail.app.androidframeworktraining.other.cleanarchitecture.domain.usecase.ReadTodoUseCase
+import com.hobbydevelopgmail.app.androidframeworktraining.other.cleanarchitecture.domain.usecase.WriteTodoUseCase
+import com.hobbydevelopgmail.app.androidframeworktraining.other.cleanarchitecture.infrastructure.datasource.TodoEditDataSource
 
 class TodoEditActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityTodoEditBinding
+    lateinit var binding: ActivityCleanarchitectureTodoEditBinding
     lateinit var viewModel: TodoEditViewModel
     lateinit var navigationController: NavigationController
     lateinit var readTodoUseCase: ReadTodoUseCase
@@ -29,7 +29,7 @@ class TodoEditActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_todo_edit)
+        setContentView(R.layout.activity_cleanarchitecture_todo_edit)
         configure()
     }
 
@@ -41,7 +41,7 @@ class TodoEditActivity : AppCompatActivity() {
             例えばボタンのクリック時のonClickはViewModelが担当します。
             画面遷移の場合はViewModelはView(ActivityやFragment)を知らないのでNavigatorを使って画面遷移をします。
          */
-        binding = DataBindingUtil.setContentView<ActivityTodoEditBinding>(this, R.layout.activity_todo_edit)
+        binding = DataBindingUtil.setContentView<ActivityCleanarchitectureTodoEditBinding>(this, R.layout.activity_cleanarchitecture_todo_edit)
 
         // 「書き込み」「読み込み」のUseCaseを注入する
         val todoEditRepository: TodoEditDataSource = TodoEditDataSource(this)

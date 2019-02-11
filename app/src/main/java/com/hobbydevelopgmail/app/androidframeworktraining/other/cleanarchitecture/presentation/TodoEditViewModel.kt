@@ -1,12 +1,12 @@
-package com.hobbydevelopgmail.app.androidframeworktraining.todo.presentation
+package com.hobbydevelopgmail.app.androidframeworktraining.other.cleanarchitecture.presentation
 
 import android.databinding.BaseObservable
 import android.databinding.Bindable
 import com.hobbydevelopgmail.app.androidframeworktraining.BR
 import com.hobbydevelopgmail.app.androidframeworktraining.common.NavigationController
-import com.hobbydevelopgmail.app.androidframeworktraining.todo.domain.model.TodoEditModel
-import com.hobbydevelopgmail.app.androidframeworktraining.todo.domain.usecase.ReadTodoUseCase
-import com.hobbydevelopgmail.app.androidframeworktraining.todo.domain.usecase.WriteTodoUseCase
+import com.hobbydevelopgmail.app.androidframeworktraining.other.cleanarchitecture.domain.model.TodoEditModel
+import com.hobbydevelopgmail.app.androidframeworktraining.other.cleanarchitecture.domain.usecase.ReadTodoUseCase
+import com.hobbydevelopgmail.app.androidframeworktraining.other.cleanarchitecture.domain.usecase.WriteTodoUseCase
 
 
 /*

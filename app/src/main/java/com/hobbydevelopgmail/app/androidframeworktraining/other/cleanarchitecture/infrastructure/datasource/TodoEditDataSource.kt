@@ -1,10 +1,10 @@
-package com.hobbydevelopgmail.app.androidframeworktraining.todo.infrastructure.datasource
+package com.hobbydevelopgmail.app.androidframeworktraining.other.cleanarchitecture.infrastructure.datasource
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.hobbydevelopgmail.app.androidframeworktraining.todo.domain.model.TodoEditModel
-import com.hobbydevelopgmail.app.androidframeworktraining.todo.domain.repository.TodoEditRepository
-import com.hobbydevelopgmail.app.androidframeworktraining.todo.infrastructure.entity.TodoEditEntity
+import com.hobbydevelopgmail.app.androidframeworktraining.other.cleanarchitecture.domain.model.TodoEditModel
+import com.hobbydevelopgmail.app.androidframeworktraining.other.cleanarchitecture.domain.repository.TodoEditRepository
+import com.hobbydevelopgmail.app.androidframeworktraining.other.cleanarchitecture.infrastructure.entity.TodoEditEntity
 
 class TodoEditDataSource(private val context: Context): TodoEditRepository {
 

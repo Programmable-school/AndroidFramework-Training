@@ -22,7 +22,9 @@
             </intent-filter>
         </activity>
         <!-- Activityを追加していく -->
-        <activity android:name=".todo.presentation.TodoEditActivity">
+        <activity android:name=".other.cleanarchitecture.presentation.TodoEditActivity">
+        </activity>
+        <activity android:name=".todo.TodoEditActivity">
         </activity>
     </application>
 
